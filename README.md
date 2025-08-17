@@ -5,7 +5,7 @@ Quick installer for [dotf](https://github.com/k1-c/dotf) - a dotfiles management
 ## Installation
 
 ```bash
-curl -sSL https://dotf-install.sh | bash
+curl -sSL dotf-install.sh | sh
 ```
 
 ## What is dotf?
