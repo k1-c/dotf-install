@@ -2,16 +2,15 @@
   "name": "dotf-install",
   "version": "1.0.0",
   "description": "Installation site for dotf - dotfiles management tool",
-  "main": "public/index.html",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "wrangler pages dev public",
-    "deploy": "wrangler pages deploy public"
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
   },
   "keywords": [
     "dotfiles",
     "installer",
-    "cloudflare-pages",
-    "edge-functions"
+    "cloudflare-workers"
   ],
   "author": "k1-c",
   "license": "UNLICENSED",
