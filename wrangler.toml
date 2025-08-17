@@ -2,3 +2,7 @@ name = "dotf-install"
 main = "src/index.js"
 compatibility_date = "2025-08-17"
 workers_dev = true
+
+[[routes]]
+pattern = "dotf-install.sh/*"
+zone_name = "dotf-install.sh"
