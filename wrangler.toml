@@ -1,7 +1,3 @@
 name = "dotf-install"
 compatibility_date = "2025-08-17"
 pages_build_output_dir = "public"
-
-[[pages_functions]]
-directory = "functions"
-compatibility_date = "2025-08-17"
