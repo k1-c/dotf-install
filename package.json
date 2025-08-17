@@ -4,8 +4,8 @@
   "description": "Installation site for dotf - dotfiles management tool",
   "main": "public/index.html",
   "scripts": {
-    "dev": "wrangler pages dev public --compatibility-date=2024-01-01",
-    "deploy": "wrangler pages deploy public --compatibility-date=2024-01-01"
+    "dev": "wrangler pages dev public",
+    "deploy": "wrangler pages deploy public"
   },
   "keywords": [
     "dotfiles",
@@ -14,13 +14,13 @@
     "edge-functions"
   ],
   "author": "k1-c",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "https://github.com/k1-c/dotf-install.git"
   },
   "homepage": "https://dotf-install.sh",
   "devDependencies": {
-    "wrangler": "^3.0.0"
+    "wrangler": "^4.30.0"
   }
 }
