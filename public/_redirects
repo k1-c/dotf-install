@@ -1,3 +1,0 @@
-# フォールバック用リダイレクト設定
-# Edge関数が失敗した場合にmainブランチのinstall.shにリダイレクト
-/install.sh https://raw.githubusercontent.com/k1-c/dotf/main/install.sh 302
