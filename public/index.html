@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dotf installer</title>
+    <meta name="description" content="dotfiles management tool installer">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+                color: #e0e0e0;
+            }
+            .install-command {
+                background: #2d2d2d !important;
+                border: 1px solid #404040;
+            }
+            .copy-btn {
+                background: #0066cc !important;
+            }
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            h1 {
+                color: #74b9ff;
+            }
+        }
+        
+        .install-command {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+            margin: 20px 0;
+            border: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .command-text {
+            font-size: 14px;
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .copy-btn {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        
+        .copy-btn:hover {
+            background: #0052a3;
+        }
+        
+        .copy-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .section {
+            margin: 40px 0;
+        }
+        
+        .section h2 {
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .section h2 {
+                color: #81ecec;
+            }
+        }
+        
+        .feature-list {
+            background: #f1f3f4;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .feature-list {
+                background: #2d3436;
+                border-left-color: #74b9ff;
+            }
+        }
+        
+        .feature-list ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .feature-list li {
+            margin: 8px 0;
+        }
+        
+        .links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .links a {
+            color: #0066cc;
+            text-decoration: none;
+            padding: 8px 12px;
+            border: 1px solid #0066cc;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .links a:hover {
+            background: #0066cc;
+            color: white;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .links a {
+                color: #74b9ff;
+                border-color: #74b9ff;
+            }
+            .links a:hover {
+                background: #74b9ff;
+                color: #1a1a1a;
+            }
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .warning {
+                background: #2d2a1f;
+                border-color: #6c5e1a;
+                color: #ffd93d;
+            }
+        }
+        
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .footer {
+                color: #b2bec3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🛠️ dotf installer</h1>
+    
+    <div class="section">
+        <h2>Quick Installation</h2>
+        <p>Run this command to install the latest version of <strong>dotf</strong>:</p>
+        
+        <div class="install-command">
+            <code class="command-text" id="install-cmd">curl -sSL https://dotf-install.sh | bash</code>
+            <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+        </div>
+        
+        <div class="warning">
+            <strong>⚠️ Security Notice:</strong> Always review scripts before piping them to bash. You can download and inspect the script first using the manual download option below.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Manual Download</h2>
+        <p>You can also download and inspect the install script before running it:</p>
+        <div class="links">
+            <a href="/install.sh">📥 Download install.sh</a>
+            <a href="https://github.com/k1-c/dotf" target="_blank">📖 Source code</a>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>What is dotf?</h2>
+        <div class="feature-list">
+            <p><strong>dotf</strong> is a modern dotfiles management tool that helps you:</p>
+            <ul>
+                <li>Sync your configuration files across multiple machines</li>
+                <li>Track changes to your dotfiles with git</li>
+                <li>Easily backup and restore your development environment</li>
+                <li>Share your configurations with others</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Installation Process</h2>
+        <p>The installer script will:</p>
+        <div class="feature-list">
+            <ul>
+                <li>Download the latest binary for your platform</li>
+                <li>Install it to <code>/usr/local/bin</code> (requires sudo)</li>
+                <li>Verify the installation</li>
+                <li>Display usage instructions</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>System Requirements</h2>
+        <div class="feature-list">
+            <ul>
+                <li>Linux or macOS</li>
+                <li>curl (for downloading)</li>
+                <li>sudo access (for installation)</li>
+                <li>git (for dotfiles management)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Made with ❤️ by <a href="https://github.com/k1-c" target="_blank">k1-c</a></p>
+        <p>This installer always fetches the latest script from the main branch</p>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const cmd = document.getElementById('install-cmd').textContent;
+            navigator.clipboard.writeText(cmd).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.style.background = '#28a745';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#0066cc';
+                }, 2000);
+            }).catch(err => {
+                // フォールバック: テキストを選択状態にする
+                const range = document.createRange();
+                range.selectNode(document.getElementById('install-cmd'));
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+                
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = 'Selected!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            });
+        }
+        
+        // キーボードショートカット (Ctrl+C または Cmd+C)
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'c' && !window.getSelection().toString()) {
+                copyToClipboard();
+            }
+        });
+    </script>
+</body>
+</html>
