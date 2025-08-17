@@ -1,3 +1,4 @@
 name = "dotf-install"
 main = "src/index.js"
 compatibility_date = "2025-08-17"
+workers_dev = true
